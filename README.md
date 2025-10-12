@@ -1,5 +1,5 @@
 # ROS Repulsive Fields
-Minimal ROS package for reactive obstacle avoidance using repulsive fields generated from a pointcloud data. Similar in nature as Artificial Potential Fields-- without the attractive force.
+Minimal ROS package for reactive obstacle avoidance using repulsive fields generated from a pointcloud data. Somewhat similar as Artificial Potential Fields-- without the attractive force.
 
 ## Overview
 
@@ -7,9 +7,9 @@ Minimal ROS package for reactive obstacle avoidance using repulsive fields gener
   <img src="repulsive_field.gif" />
 </p>
 
-- Rainbow Cubes --> Input pointcloud
-- White Cubes --> Pointclouds that contributes to repulsive forces  
-- Red Arrow --> Resultant force 
+- Rainbow Cubes --> Input pointcloud.
+- White Cubes --> Pointcloud that contributes towards repulsive forces.
+- Red Arrow --> Resultant force.
 
 Though there exists a more standardized [repulsive force formulation](
 https://www.sciencedirect.com/science/article/pii/S0019057823000769#sec3), in practice they do not differ much and a simpler one is formulated and used down below.
