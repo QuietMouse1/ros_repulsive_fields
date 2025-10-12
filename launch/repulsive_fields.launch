@@ -1,0 +1,9 @@
+<?xml version="1.0"?>
+<launch>
+	<node name="repulsive_fields" pkg="repulsive_fields" type="repulsive_fields" output="screen" args=""/>
+	<param name="UAV_radius" type="double" value="0.1"/>
+	<param name="MAX_radius" type="double" value="1.0"/>
+	<param name="MAX_height" type="double" value="2.5"/>
+	<param name="MIN_height" type="double" value="0.15"/>
+	<param name="k_repulsive" type="double" value="1.0"/>
+</launch>

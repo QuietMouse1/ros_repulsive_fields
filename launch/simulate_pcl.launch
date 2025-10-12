@@ -1,0 +1,5 @@
+<?xml version="1.0"?>
+
+<launch>	
+	<node name="pcl_pub" pkg="repulsive_fields" type="simulate_pointcloud.py" output="screen"/>
+</launch>
