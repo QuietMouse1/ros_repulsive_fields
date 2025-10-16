@@ -14,6 +14,9 @@
 #include <repulsive_fields/setRepulsiveFieldsConfig.h>
 #include <visualization_msgs/Marker.h>
 
+#include <mavros_msgs/PositionTarget.h>
+#include <geometry_msgs/PoseStamped.h>
+
 using namespace geometry_msgs;
 using namespace std;
 using namespace ros;
@@ -37,13 +40,26 @@ class RepulsiveFields{
         void odometryCallback(const nav_msgs::Odometry::ConstPtr& msg);
         void pointcloud2Callback(const sensor_msgs::PointCloud2::ConstPtr& msg); 
         void filterCloudRange(pcl::PointCloud<pcl::PointXYZ>::Ptr cloud, float min_range, float max_range, float max_height, float min_height);
+
+        void mavrosSetpointCallback(const geometry_msgs::PoseStamped::ConstPtr &msg);
+        void mavrosRawSetpointCallback(const mavros_msgs::PositionTarget::ConstPtr &msg);
         ros::Subscriber pointcloud2_subscriber_;
         ros::Subscriber odometry_subscriber_;
+
+        ros::Subscriber mavros_setpoint_pose_local_sub_;
+        ros::Subscriber mavros_setpoint_raw_sub_;
 
         ros::Publisher repulsive_vec3_;
         ros::Publisher repulsive_pcl_pub_;
         ros::Publisher repulsive_marker_pub_;
 
+        ros::Publisher mavros_setpoint_pose_local_pub_;
+        ros::Publisher mavros_setpoint_raw_pub_;
+
         nav_msgs::Odometry odometry_;
         pcl::PointCloud<pcl::PointXYZ>::Ptr pointcloud2_;
+
+        geometry_msgs::PoseStamped input_mavros_setpoint_;
+        mavros_msgs::PositionTarget input_mavros_raw_setpoint_;
+        Vector3f sum_repulsive_force_;
 };
