@@ -1,0 +1,5 @@
+<?xml version="1.0"?>
+
+<launch>	
+	<node name="flight_goal_manager" pkg="repulsive_fields" type="flight_goal_script.py" output="screen"/>
+</launch>
